@@ -2,3 +2,14 @@
 
 - How do you say "PostgreSQL".
 - 'powerful' functions
+- In PostgreSQL where are these databases stored? Can I open them as files?
+- Plan new CalCou
+  - little as poss to begin with 'vertical slice'
+  - CSS 'tailwind'
+  - bootstrap / bootswatch
+- Looking at [these](https://launchschool.com/books/sql/read/table_relationships#exercises)exercises - can we go through 6.?
+  - We are manually entering the PRIMARY KEY references, isn;t there a way to select them from the table, within the `INSERT INTO` function?
+
+We talked about:
+
+- No SQL, Mongo DB, Document store.
