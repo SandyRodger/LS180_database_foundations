@@ -13,3 +13,7 @@
 We talked about:
 
 - No SQL, Mongo DB, Document store.
+
+## next time:
+
+- How does this little sinatra program know it has to be in port 4567?
