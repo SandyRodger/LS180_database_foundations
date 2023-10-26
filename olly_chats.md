@@ -17,4 +17,4 @@ We talked about:
 ## next time:
 
 - How does this little sinatra program know it has to be in port 4567?
-- reconficuring my `render tables` method is causing some very strange crashes.
+- reconfiguring my `render tables` method is causing some very strange crashes. - beacuse the method is called `headers` apparently.
