@@ -19,3 +19,4 @@ We talked about:
 - How does this little sinatra program know it has to be in port 4567?
 - reconfiguring my `render tables` method is causing some very strange crashes. - beacuse the method is called `headers` apparently.
 - Why does my css take so long to render?
+- Adding a Javascript drop-down list.
