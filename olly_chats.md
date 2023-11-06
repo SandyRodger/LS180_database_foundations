@@ -20,3 +20,7 @@ We talked about:
 - reconfiguring my `render tables` method is causing some very strange crashes. - beacuse the method is called `headers` apparently.
 - Why does my css take so long to render?
 - Adding a Javascript drop-down list.
+
+- Toss up between normalization and duplication.
+- practically speaking, what is the difference between right joins and left joins?
+- After a while im told there are too many connections being made to my database. Should I be closing these connections?
