@@ -244,12 +244,123 @@ SELECT substr(email, strpos(email, '@') + 1) as domain,
 
 5. `DELETE FROM people WHERE id = 3399;`
 6. 'DELETE FROM people WHERE state = 'CA';'
-7. 
+7. `UPDATE people SET given_name = UPPER(given_name) WHERE email LIKE '%teleworm.us';`
+8. `DELETE FROM people;`
 
 
-9	NOT NULL and Default Values	Not completed
-10	More Constraints	Not completed
-11	Using Keys	Not completed
+## [NOT NULL and Default Values](https://launchschool.com/lessons/a1779fd2/assignments/c6a5a6cb)
+
+- The precision with which you store your data decides how powerful your database is.
+- This page describes how adding an employee with 2 fields empty confuses sorting and selecting functions.
+- We solve the problem by setting these fields to `NOT NULL`. ALso with `DEFAULT` entries.
+
+### Practice problems
+
+1. Using an operator on NULL returns NULL.
+
+2.
+```
+ALTER TABLE employees ALTER COLUMN department SET DEFAULT 'unassigned';
+UPDATE employees SET department = 'unassigned' WHERE department IS NULL;
+ALTER TABLE employees ALTER COLUMN department SET NOT NULL;
+```
+
+3.
+```
+CREATE TABLE temperatures(
+  date timestamp NOT NULL,
+  low integer NOT NULL,
+  high integer NOT NULL);
+```
+
+4.
+
+```
+SELECT date, ROUND((high + low) / 2.0, 1) as average
+  FROM temperatures
+ WHERE date BETWEEN '2016-03-02' AND '2016-03-08';
+```
+
+5. 
+```
+SELECT date, ROUND((high + low) / 2.0, 1) as average
+  FROM temperatures
+ WHERE date BETWEEN '2016-03-02' AND '2016-03-08';
+```
+
+6. `ALTER TABLE temperatures ADD COLUMN rainfall integer DEFAULT 0;` 
+
+7. `UPDATE temperatures SET rainfall = (round((low + high)/2, 1) - 35) WHERE (round((low + high)/2, 1) - 35) > 0;`
+
+8.
+```
+ALTER TABLE temperatures ALTER COLUMN rainfall TYPE decimal(6,4);
+UPDATE temperatures SET rainfall = rainfall/25.4;
+```
+
+9. `\d weather`
+
+10. `pg-dump -d sql-course -t weather --inserts > dump.sql`
+
+## [More Constraints](https://launchschool.com/lessons/a1779fd2/assignments/f5b732e5)
+
+1. `psql -d residents < films2.sql`
+2. 
+```
+ALTER TABLE films ALTER COLUMN title SET NOT NULL;
+ALTER TABLE films ALTER COLUMN year SET NOT NULL;
+ALTER TABLE films ALTER COLUMN genre SET NOT NULL;
+ALTER TABLE films ALTER COLUMN director SET NOT NULL;
+ALTER TABLE films ALTER COLUMN duration SET NOT NULL;
+```
+3. Nullable column is filled with 'not null' value.
+4. `ALTER TABLE films ADD CONSTRAINT title_unique UNIQUE (title);` (i peaked)
+5. `Indexes:
+    "title_unique" UNIQUE CONSTRAINT, btree (title)`
+6.`ALTER TABLE films DROP CONSTRAINT title_unique;`
+7. `ALTER TABLE films ADD CONSTRAINT title_length CHECK (length(title) >= 1);`  I peaked
+8. `INSERT INTO films VALUES ('', 1, 'ho', 'ho', 1);`
+9. `Check constraints:
+    "title_length" CHECK (length(title::text) >= 1)`
+10. `ALTER TABLE films DROP CONSTRAINT title_length;`
+11. `ALTER TABLE films ADD CONSTRAINT year_range CHECK (year BETWEEN 1900 AND 2100);`  I peaked
+12. `Check constraints:
+    "year_range" CHECK (year >= 1900 AND year <= 2100)`
+13. ` ALTER TABLE films ADD CONSTRAINT director_name
+    CHECK (length(director) >= 3 AND position(' ' in director) > 0);` I peaked.
+14. `"director_name" CHECK (length(director::text) >= 3 AND POSITION((' '::text) IN (director)) > 0)`.
+15. 
+```
+UPDATE films SET director = 'Johnny' WHERE title = 'Die Hard';
+ERROR:  new row for relation "films" violates check constraint "director_name"
+DETAIL:  Failing row contains (Die Hard, 1988, action, Johnny, 132).
+```
+16. 
+- Data type (including length limitation)
+- NOT NULL constraint
+- Check constraint.
+17. I peaked ( I ned a nap)
+18. `\d tablename`
+
+## [Using Keys](https://launchschool.com/lessons/a1779fd2/assignments/00e428da)
+
+- The problem that is solved by using keys is that rows of data can be identical, while representing different real-world objects.
+  - Natural Keys: ie. using a value that exists already in the data set as a unique identifier. The problem here is that very few things are truly unique. Even SSNs are not universal.
+  - Surrogate Keys: most commonly an auto-incrementing number, ie `serial`.
+
+```
+-- This statement:
+CREATE TABLE colors (id serial, name text);
+
+-- is actually interpreted as if it were this one:
+CREATE SEQUENCE colors_id_seq;
+CREATE TABLE colors (
+    id integer NOT NULL DEFAULT nextval('colors_id_seq'),
+    name text
+);
+```
+
+
 12	GROUP BY and Aggregate Functions	Not completed
 13	How PostgreSQL Executes Queries	Not completed
 14	Table and Column Aliases	Not completed
