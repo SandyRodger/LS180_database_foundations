@@ -360,6 +360,11 @@ CREATE TABLE colors (
 );
 ```
 
+General rules:
+
+1. All tables should have a primary key column called id.
+2. The id column should automatically be set to a unique value as new rows are inserted into the table.
+3. The id column will often be an integer, but there are other data types (such as UUIDs) that can provide specific benefits.
 
 12	GROUP BY and Aggregate Functions	Not completed
 13	How PostgreSQL Executes Queries	Not completed
