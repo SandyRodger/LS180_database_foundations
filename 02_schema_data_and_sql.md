@@ -345,8 +345,16 @@ DETAIL:  Failing row contains (Die Hard, 1988, action, Johnny, 132).
 ## [Using Keys](https://launchschool.com/lessons/a1779fd2/assignments/00e428da)
 
 - The problem that is solved by using keys is that rows of data can be identical, while representing different real-world objects.
-  - Natural Keys: ie. using a value that exists already in the data set as a unique identifier. The problem here is that very few things are truly unique. Even SSNs are not universal.
-  - Surrogate Keys: most commonly an auto-incrementing number, ie `serial`.
+
+### Natural Keys
+
+- ie. using a value that exists already in the data set as a unique identifier. The problem here is that very few things are truly unique. Even SSNs are not universal.
+
+### Surrogate Keys: 
+
+- most commonly an auto-incrementing number, ie `serial`.
+
+#### Sequences
 
 ```
 -- This statement:
@@ -360,14 +368,71 @@ CREATE TABLE colors (
 );
 ```
 
+- [Documentation](https://www.postgresql.org/docs/9.5/sql-createsequence.html)
+
+### Enforcing uniqueness
+
+### Primary keys:
+
+
 General rules:
 
 1. All tables should have a primary key column called id.
 2. The id column should automatically be set to a unique value as new rows are inserted into the table.
 3. The id column will often be an integer, but there are other data types (such as UUIDs) that can provide specific benefits.
 
-12	GROUP BY and Aggregate Functions	Not completed
-13	How PostgreSQL Executes Queries	Not completed
-14	Table and Column Aliases	Not completed
-15	Summary	Not completed
-16	Quiz Lesson 2
+##### UUIDs
+
+- just really long id numbers. They don't increment.
+
+### Practice problems
+
+1. `CREATE SEQUENCE counter;`
+2. `SELECT nextval('counter');`
+3. `DROP SEQUENCE counter;`
+4. yes: `CREATE SEQUENCE even_counter INCREMENT BY 2 MINVALUE 2;`, `SELECT nextval('even_counter');`.
+5. `regions_id_seq` (peaked)
+6. Write a SQL statement to add an auto-incrementing integer primary key column to the films table.
+`ALTER TABLE films ADD COLUMN id serial PRIMARY KEY;`
+or
+`CREATE SEQUENCE films_id_seq;`
+`ALTER TABLE films ADD COLUMN integer NOT NULL DEFAULT nextval('films_id_seq') PRIMARY KEY;`
+7. `ERROR:  duplicate key value violates unique constraint "id_unique"
+DETAIL:  Key (id)=(3) already exists.`
+8. `ERROR:  multiple primary keys for table "films" are not allowed`
+9. `ALTER TABLE films DROP CONSTRAINT films_pkey;`
+
+
+
+## [GROUP BY and Aggregate Functions](https://launchschool.com/lessons/a1779fd2/assignments/2e9b453b)
+
+2. 
+```
+INSERT INTO films(title, year, genre, director, duration)  VALUES
+('Wayne''s World',	1992,	'comedy',	'Penelope Spheeris',	95),
+('Bourne Identity',	2002,	'espionage',	'Doug Liman',	118);
+```
+
+3. `SELECT DISTINCT genre FROM films ;`
+4. `SELECT genre FROM films GROUP BY genre;`
+5. `SELECT round(avg(duration)) FROM films;`
+6. `SELECT genre, round(avg(duration)) FROM films GROUP BY genre;`
+7. My solution (half the results are off):
+`SELECT round(year, -1) AS decade, round(avg(duration)) AS duration FROM films GROUP BY decade ORDER BY decade;`
+LS solution:
+`SELECT year / 10 * 10 as decade, ROUND(AVG(duration)) as average_duration
+  FROM films GROUP BY decade ORDER BY decade;`
+8. `SELECT * FROM films WHERE director ILIKE 'john%';`
+9. `SELECT genre, count(genre) AS count FROM films GROUP BY genre ORDER BY count DESC;`
+10. `SELECT genre, sum(duration) AS total_duration FROM films GROUP BY genre ORDER BY total_duration;` - this misses a sub-sorting of genre
+LS: `SELECT genre, sum(duration) AS total_duration
+  FROM films GROUP BY genre ORDER BY total_duration, genre ASC;`
+
+## [How PostgreSQL Executes Queries](https://launchschool.com/lessons/a1779fd2/assignments/f4b7a9dc)
+
+
+
+## Table and Column Aliases	
+## Summary	
+
+## Quiz Lesson 2
