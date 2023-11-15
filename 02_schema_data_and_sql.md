@@ -433,6 +433,7 @@ LS: `SELECT genre, sum(duration) AS total_duration
 
 
 ## Table and Column Aliases	
+
 ## Summary	
 
 ## Quiz Lesson 2
