@@ -157,13 +157,249 @@ causes this error message:
 
 `ERROR:  column "product_id" of relation "orders" contains null values`
 
-7. `DELETE FROM orders WHERE product_id IS NULL;`  CORRECT 
-## [One-to-Many Relationships]()
-## [Extracting a 1:M Relationship From Existing Data]()
-## [Assignment: SQL Fundamentals - DDL (Data Definition Language)]()
-## [Assignment: SQL Fundamentals - DML (Data Manipulation Language)]()
-## [Many-to-Many Relationships]()
-## [Converting a 1:M Relationship to a M:M Relationship]()
-## [Assignment: SQL Fundamentals - Many to Many]()
+7. `DELETE FROM orders WHERE product_id IS NULL;`  CORRECT
+
+
+8.  INCORRECT
+
+LS solution:
+
+```
+CREATE TABLE reviews (
+  id serial PRIMARY KEY,
+  body text NOT NULL,
+  product_id integer REFERENCES products (id)
+);
+```
+
+9.
+```
+INSERT INTO  reviews(body, product_id) VALUES 
+('a little small', 1), ('very round!', 2), ('could have been smaller', 3);
+
+SELECT p.name AS product, r.body AS review FROM products AS p
+INNER JOIN reviews AS r
+ON p.id = r.product_id
+;
+```
+
+10. False - CORRECT
+
+## [One-to-Many Relationships](https://launchschool.com/lessons/5ae760fa/assignments/e94816bd)
+
+- 'update anomaly'
+- 'insertion anomaly'
+- 'deletion anomaly'
+- Normalization is the process of designing schema to avoid these anomalies.
+
+- `SELECT * FROM calls, contacts;`
+
+1. `INSERT INTO calls("when", duration, contact_id) VALUES 
+('2016-01-18 14:47:00',	632, 6);`               CORRECT
+
+2. 
+
+```
+SELECT c."when", c.duration, con.first_name, con.last_name, c.id  FROM calls AS c 
+INNER JOIN contacts AS con
+ON c.contact_id = con.id
+WHERE c.contact_id != 6;
+```
+
+3. CORRECT
+```
+SELECT c."when", c.duration, con.first_name FROM calls AS c 
+INNER JOIN contacts AS con
+ON c.contact_id = con.id
+WHERE c.contact_id != 6;
+```
+
+LS solution:
+```
+SELECT calls.when, calls.duration, contacts.first_name
+FROM calls INNER JOIN contacts ON calls.contact_id = contacts.id
+WHERE (contacts.first_name || ' ' || contacts.last_name) != 'William Swift';
+```
+
+3. 
+```
+
+INSERT INTO contacts(first_name, last_name, number) VALUES
+('Merve',	'Elk', 6343511126), 
+('Sawa',	'Fyodorov', 6125594874);
+
+
+INSERT INTO calls("when",	duration, contact_id) VALUES 
+('2016-01-17 11:52:00',	175, 27),
+('2016-01-18 21:22:00',	79, 28);
+```
+
+4. I got it wrong - through rushing.
+
+```
+ALTER TABLE contacts 
+ADD CONSTRAINT number_unique
+UNIQUE (number);
+```
+5. CORRECT
+
+`INSERT INTO contacts(first_name, last_name, number) VALUES ('Barry', 'Manilow', 6125594874);`
+
+```
+ERROR:  duplicate key value violates unique constraint "number_unique"
+DETAIL:  Key (number)=(6125594874) already exists.
+```
+
+6. Because it is a reserved-word in SQL.
+
+## [Extracting a 1:M Relationship From Existing Data](https://launchschool.com/lessons/5ae760fa/assignments/871779cc)
+
+
+
+## [Assignment: SQL Fundamentals - DDL (Data Definition Language)](https://launchschool.com/lessons/5ae760fa/assignments/035424b7)
+
+-[exercises](https://launchschool.com/exercise_sets/7d622479)
+
+## [Assignment: SQL Fundamentals - DML (Data Manipulation Language)](https://launchschool.com/lessons/5ae760fa/assignments/6ca37b56)
+
+- 
+
+## [Many-to-Many Relationships](https://launchschool.com/lessons/5ae760fa/assignments/95ff0606)
+
+1.  CORRECT
+```
+ALTER TABLE books_categories
+DROP CONSTRAINT books_categories_book_id_fkey,
+ADD CONSTRAINT books_categories_book_id_fkey
+FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
+ALTER COLUMN book_id SET NOT NULL;
+
+
+ALTER TABLE books_categories
+DROP CONSTRAINT books_categories_category_id_fkey,
+ADD CONSTRAINT books_categories_category_id_fkey
+FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
+ALTER COLUMN category_id SET NOT NULL;
+```
+
+2. CORRECT
+```
+SELECT b.id, b.author, STRING_AGG(c.name, ', ') AS categories
+FROM books AS b
+JOIN books_categories AS bc
+ON bc.book_id = b.id
+JOIN categories AS c
+ON bc.category_id = c.id
+GROUP BY b.id
+ORDER BY b.id
+;
+```
+
+3. CORRECT
+
+```
+ALTER TABLE books
+ALTER COLUMN title
+TYPE varchar(100);
+
+INSERT INTO books(author, title) VALUES
+('Lynn Sherr',	'Sally Ride: America''s First Woman in Space'),
+('Charlotte Brontë',	'Jane Eyre'),
+('Meeru Dhalwala and Vikram Vij',	'Vij''s: Elegant and Inspired Indian Cuisine');
+
+
+INSERT INTO categories(name) VALUES ('Space Exploration'), ('Cookbook'), ('South Asia');
+
+INSERT INTO books_categories(book_id, category_id) VALUES
+(4, 5), (4, 1), (4, 7),
+(5, 2), (5, 4), 
+(7, 8), (7, 1), (7, 9)
+;
+```
+
+4. CORRECT
+
+```
+ALTER TABLE books_categories ADD CONSTRAINT books_id_categories_id_both_unique UNIQUE (book_id, category_id);
+```
+
+5. CORRECT
+```
+SELECT c.name, count(b.id) AS book_count, string_agg(b.title, ', ') AS book_titles 
+FROM categories AS c
+LEFT OUTER JOIN books_categories AS bc
+ON c.id = bc.category_id
+LEFT OUTER JOIN books AS b
+ON b.id = bc.book_id
+GROUP BY c.name
+ORDER BY c.name
+;
+```
+
+## [Converting a 1:M Relationship to a M:M Relationship](https://launchschool.com/lessons/5ae760fa/assignments/5c789742)
+
+2. 
+```
+CREATE TABLE directors_films (
+  id serial PRIMARY KEY,
+  director_id integer REFERENCES directors (id) ON DELETE CASCADE,
+  film_id integer REFERENCES films (id) ON DELETE CASCADE,
+  UNIQUE(director_id, film_id)
+);
+```
+
+3. 
+
+```
+INSERT INTO directors_films(director_id, film_id) VALUES
+(1, 1), (2, 2), (3, 3), (4 ,4), (5, 5), (6, 6), (3, 7), (7, 8), (8, 9), (4, 10)
+;
+```
+
+4. `ALTER TABLE films DROP COLUMN director_id ;`
+
+5.
+
+```
+ SELECT f.title, d.name FROM films AS f
+JOIN directors_films AS df
+ON f.id = df.film_id
+JOIN directors AS d
+ON d.id = df.director_id
+ORDER BY f.title
+;
+```
+
+6. MOSTLY CORRECT (a few details off)
+```
+INSERT INTO films(title, year, genre, duration) VALUES
+('Fargo', 1996, 'comedy', 98),
+('No Country for Old Men',	2007,	'western',	122),
+('Sin City',	2005,	'crime',	124),
+('Spy Kids',	2001,	'scifi',	88);
+
+INSERT INTO directors(name) VALUES
+('Joel Coen'), ('Ethan Coen'), ('Frank Miller'), ('Robert Rodriguez');
+
+INSERT INTO directors_films(director_id, film_id) VALUES
+(9, 11), (9, 12), (10, 12), (11, 13), (12, 13), (12, 14);
+```
+
+7.
+```
+SELECT d.name, count(f.title) FROM films AS f
+JOIN directors_films AS df
+ON f.id = df.film_id
+JOIN directors AS d
+ON d.id = df.director_id
+GROUP BY d.name
+ORDER BY count(f.title) DESC, d.name
+;
+```
+
+## [Assignment: SQL Fundamentals - Many to Many](https://launchschool.com/lessons/5ae760fa/assignments/74f45364)
+
+
+
 ## [Summary]()
 ## [Quiz Lesson 3]()
