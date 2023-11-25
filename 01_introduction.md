@@ -127,7 +127,7 @@ CREATE TABLE reviews (
 ### [Types of joins](https://launchschool.com/books/sql/read/joins#typesofjoins)
 
 - `INNER` is the default type of join. It returns the common rows of the two tables. By looking at the Primary and Foreign keys of the 2 tables. Rows which exist in only one table are left out.
-- 'LEFT` (AKA left outer) takes everything from the left (even if there's no relation for that row with the other table) and chooses what coems from the right based on a condition. So there will be lots of `NULLS` where the data doesn't match.
+- `LEFT` (AKA left outer) takes everything from the left (even if there's no relation for that row with the other table) and chooses what coems from the right based on a condition. So there will be lots of `NULLS` where the data doesn't match.
 - `RIGHT` - As above, but it's the right table with the nulls and the left table is full.
 - `FULL` - like a right and left at the same time. Where the jopin condition is met the rows match otherwise, nulls.
 - `CROSS JOIN` - has no condition. Just returns all combinations. These are fairly useless and rarely encountered.
