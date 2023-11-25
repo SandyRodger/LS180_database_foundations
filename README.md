@@ -1,5 +1,7 @@
 # LS180_database_foundations
 
+## L1
+
 - [Introduction to the Course](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#introduction-to-the-course)
 - [Welcome](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#welcome)
 - [What this Course Covers](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#what-this-course-covers)
@@ -23,3 +25,29 @@
 - [Assignment: SQL Fundamentals - Easy 1](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#assignment-sql-fundamentals-easy-1)
 - [Quiz Lesson 1](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#quiz-lesson-1)
 
+## L2
+
+- [Schema, data and SQL](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#schema-data-and-sql)
+- [What to Focus On](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#what-to-focus-on)
+- [The SQL Language](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#the-sql-language)
+  - [Syntax](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#syntax)
+  - [Practice problems: SQL Style Guide](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#practice-problems-sql-style-guide)
+- [PostgreSQL Data Types](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#postgresql-data-types)
+  - [NULL](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#null)
+  - [Practice problems: Working with a Single Table](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#practice-problems-working-with-a-single-table)
+- [More Single Table Queries](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#more-single-table-queries)
+- [NOT NULL and Default Values](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#not-null-and-default-values)
+  - [Practice problems: More Constraints](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#practice-problems-more-constraints)
+- [Using Keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#using-keys)
+  - [Natural Keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#natural-keys)
+  - [Surrogate Keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#surrogate-keys)
+    - [Sequences](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#sequences)
+  - [Enforcing uniqueness](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#enforcing-uniqueness)
+  - [Primary keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#primary-keys)
+    - [UUIDs](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#uuids)
+  - [Practice problems](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#practice-problems)
+- [GROUP BY and Aggregate Functions](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#group-by-and-aggregate-functions)
+- [How PostgreSQL Executes Queries](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#how-postgresql-executes-queries)
+- [Table and Column Aliases](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#table-and-column-aliases)
+- [Summary](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#summary)
+- [Quiz Lesson 2](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#quiz-lesson-2)
