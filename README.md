@@ -1,2 +1,25 @@
 # LS180_database_foundations
-Notes on Launch School Course - LS 180
+
+## [Introduction to the Course](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#introduction-to-the-course)
+## [Welcome](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#welcome)
+## [What this Course Covers](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#what-this-course-covers)
+## [Setting Up Cloud Development Environments](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#setting-up-cloud-development-environments)
+## [Read the Launch School SQL Book](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#read-the-launch-school-sql-book)
+  ## [Normalization](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#normalization)
+  ## [Keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#keys)
+    ## [Primary Keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#primary-keys)
+    ## [Foreign keys](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#foreign-keys)
+  ## [Referencial integrity](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#referencial-integrity)
+  ## [One to Many](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#one-to-many)
+  ## [Many to many](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#many-to-many)
+  ## [Database design](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#database-design)
+  ## [SQL joins](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#sql-joins)
+  ## [Types of joins](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#types-of-joins)
+    ## [Multiple joins](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#multiple-joins)
+  ## [Aliasing](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#aliasing)
+  ## [Subqueries](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#subqueries)
+## [Reading PostgreSQL Documentation](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#reading-postgresql-documentation)
+## [The PostgreSQL Command Line Interface](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#the-postgresql-command-line-interface)
+## [Assignment: SQL Fundamentals - Easy 1](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#assignment-sql-fundamentals-easy-1)
+## [Quiz Lesson 1](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#quiz-lesson-1)
+
