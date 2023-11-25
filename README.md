@@ -25,7 +25,7 @@
 - [Assignment: SQL Fundamentals - Easy 1](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#assignment-sql-fundamentals-easy-1)
 - [Quiz Lesson 1](https://github.com/SandyRodger/LS180_database_foundations/blob/main/01_introduction.md#quiz-lesson-1)
 
-## L2: SCHEMA< DATA AND SQL
+## L2: SCHEMA, DATA AND SQL
 
 - [Schema, data and SQL](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#schema-data-and-sql)
 - [What to Focus On](https://github.com/SandyRodger/LS180_database_foundations/blob/main/02_schema_data_and_sql.md#what-to-focus-on)
@@ -83,3 +83,12 @@
 - [Summary](https://github.com/SandyRodger/LS180_database_foundations/blob/main/04_optimising_SQL_queries.md#summary)
 - [Quiz Lesson 4](https://github.com/SandyRodger/LS180_database_foundations/blob/main/04_optimising_SQL_queries.md#quiz-lesson-4)
 - [Course LS180 Feedback](https://github.com/SandyRodger/LS180_database_foundations/blob/main/04_optimising_SQL_queries.md#course-ls180-feedback)
+
+## Quizes
+
+|  | Once | Twice | Thrice |
+| :--- | :---: | :---: | :---: |
+| L1 |  10/15 (66.67%) |
+| L2 | 8/10 (80.0%) |
+| L3 | 8/9 (88.89%) |
+| L4 | 2/2 (100.0%) |
