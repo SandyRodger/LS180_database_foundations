@@ -226,12 +226,78 @@ REFERENCES continents(id);
 |  | Once | Twice | Thrice |
 | :--- | :---: | :---: | :---: |
 | Write answers for 'study guide' questions above (with bullet-proof examples)| 26.11.23 |  
-| redo quizes | done |
+| redo quizes | 27.11.23 |
+| write out quiz-errors |
 | Refine 'study guide' answers above | 
-| 2nd go through course |
-| fill-out notes |
-| Re-do LS exercises that I failed/peaked first time. | 
+| 2nd go through course + fill-out notes|
+| Re-do LS exercises that I failed/peaked first time.| 
 | fancy extras (aggregate functions) |
 | fancy extras(Stringagg) |
 | Take assessment on Thursday 30th November| 
 
+Q1 
+
+5. Read the question carefully, the following snippets are actually correct:
+
+A:
+
+```
+CREATE TABLE airlines (
+  id serial PRIMARY KEY,
+  airline_name varchar(30),
+  country varchar(50),
+  iata_code char(2),
+  icao_code char(3),
+  website varchar(40),
+  CHECK (length(iata_code) = 2),
+  CHECK (length(icao_code) = 3)
+);
+ALTER TABLE airlines
+  ALTER COLUMN airline_name SET NOT NULL;
+```
+
+C:
+
+```
+CREATE TABLE airlines (
+  id serial PRIMARY KEY,
+  airline_name varchar(30) NOT NULL,
+  country varchar(50),
+  iata_code char(2),
+  icao_code char(3),
+  website varchar(40)
+);
+ALTER TABLE airlines
+  ADD CHECK (length(iata_code) = 2),
+  ADD CHECK (length(icao_code) = 3);
+```
+
+7. F: Remove a column (including all the data in that column) is achieved with `ALTER`:
+
+`ALTER TABLE aliens
+      DROP COLUMN name;`
+
+8. This is the only correct syntax available:
+
+```
+ALTER TABLE todos
+  ADD COLUMN status boolean NOT NULL;
+```
+
+9. When inserting data you can't have more target columns than data actually entered. You can leave out the columns, but in that case PostgreSQL will add the data in the order of the columns, so usually starting with `id`, which can be dangerous.
+
+10. We are trying to add a `1` into the id column, but there already is a `1` and it is a `PRIMARY KEY`, which means it cannot contain duplicates.
+
+11. This error was pure carelessness.
+
+15. Left outer join also returns the desired output. Maybe do some more exercises with JOINS.
+
+Q2
+
+5. This was carelessness.
+6.  Carelessness.
+
+Q3
+
+7. A LEFT OUTER JOIN would return all the users in the `library_users` table regardless of whether they had taken out a book or not.
+8. Ascending names means A at the top, just as ascending numbers means 1 at the top and 20 at the bottom.
