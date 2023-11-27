@@ -178,7 +178,7 @@ SELECT u.full_name, b.title, c.checkout_date
 
 - done
 
-## [Quiz Lesson 1](https://launchschool.com/quizzes/7e12784c/edit)
+## [Quiz Lesson 1](https://launchschool.com/lessons/234afac4/assignments/cada07f4)
 
 - 10/15 on 6.11.23
 - 2nd attempt 27.11.23 11/15 (73%)
@@ -200,5 +200,5 @@ SELECT u.full_name, b.title, c.checkout_date
 13.  C Correct
 14.  B Correct
 15.  D
-- WRONG , also B. It is a LEft outer join because it will show all rows from `pet_owners` plus any matching rows from `pets`. This means the left table can have multiples and the right can have NULLs.
+- WRONG , also B. It is a Left outer join because it will show all rows from `pet_owners` plus any matching rows from `pets`. This means the left table can have multiples and the right can have NULLs.
 
