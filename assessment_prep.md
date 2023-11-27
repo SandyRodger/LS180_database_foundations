@@ -117,6 +117,7 @@ SELECT items.name AS "Bid on Item" FROM items WHERE id IN
 
 - A sequence is a type of relation which is used to create indexes for columns. When we use the data-type `serial`, SQL automatically created a sequence which is a series of numbers which auto-increments by keeping track of the last number. The next number in a sequence can be returned using `nextval`. For example `SELECT nextval('colors_id_seq');`.
 - Sequences are usually created using the `serial` data-type so:
+
 ```
 -- this statement:
 CREATE TABLE tractors (id serial, name text);
@@ -163,7 +164,7 @@ CREATE SEQUENCE furniture_id_seq;
 CREATE TABLE furniture (
   id integer NOT NULL DEFAULT nextval('furniture_id_seq`)
 );
-`
+```
 
 10. Be able to describe what primary, foreign, natural, and surrogate keys are.
 
