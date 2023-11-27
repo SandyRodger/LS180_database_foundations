@@ -90,8 +90,8 @@
 | :--- | :---: | :---: | :---: |
 | L1 |  10/15 (66.67%)| 11/15 (73%) |
 | L2 | 8/10 (80.0%) | 9/10 (90%) |
-| L3 | 8/9 (88.89%) |
-| L4 | 2/2 (100.0%) |
+| L3 | 8/9 (89%) | 8/9 (89%) |
+| L4 | 2/2 (100.0%) | 2/2 (100.0%) |
 
 ## [Introduction to SQL](https://github.com/SandyRodger/launch_school_books/blob/main/introduction_to_sql.md)
 - [GETTING STARTED](https://github.com/SandyRodger/launch_school_books/blob/main/introduction_to_sql.md#getting-started)
