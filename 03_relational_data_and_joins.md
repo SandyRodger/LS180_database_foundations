@@ -14,7 +14,16 @@
 
 ## [Database Diagrams: Levels of Schema](https://launchschool.com/lessons/5ae760fa/assignments/2f3bc8f7)
 
-- video 
+- video
+  - Conceptual (boxes and lines) = least detail, bigger objects
+    - "A high level design focused on identifying entities and their relationships."
+    - An ERD (Entity relationship diagram)
+      - This can show one-to-one, one-to-many and many-to-many relationships. 
+  - logical (skip) a combination of the other two. Not often dealth with. 
+  - Physical (tables)
+    - "A low-level design focused on implementation".
+    -  most detail. Includes attirbutes, datatypes, rules about how these entitites will relate.
+    - Little 'p's and 'f's  and 'n's for contstraints.
 
 ## [Database Diagrams: Cardinality and Modality](https://launchschool.com/lessons/5ae760fa/assignments/46053e3b)
 ## [A Review of JOINs](https://launchschool.com/lessons/5ae760fa/assignments/0391f663)
