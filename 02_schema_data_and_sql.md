@@ -432,8 +432,26 @@ LS: `SELECT genre, sum(duration) AS total_duration
 
 
 
-## Table and Column Aliases	
+## [Table and Column Aliases](https://launchschool.com/lessons/a1779fd2/assignments/d4825863)
 
-## Summary	
+- video
 
-## Quiz Lesson 2
+## [Summary](https://launchschool.com/lessons/a1779fd2/assignments/3967e2b2)	
+
+-
+
+## [Quiz Lesson 2](https://launchschool.com/quizzes/c393ad07)
+
+- First go = 80% (8/10)
+- Second go (27.11.23) = 90% (9/10)
+1. B, D. CORRECT
+2. A, D  CORRECT
+3. A, D, G.  CORRECT
+4. B  CORRECT
+5. B, C, D  CORRECT
+6. A, D, F.
+- Not A, `NULL` is not 'not true'
+7. A  CORRECT
+8. B  CORRECT
+9. A, B  CORRECT
+10. B,  CORRECT
