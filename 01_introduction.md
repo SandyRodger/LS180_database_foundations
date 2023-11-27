@@ -180,5 +180,25 @@ SELECT u.full_name, b.title, c.checkout_date
 
 ## [Quiz Lesson 1](https://launchschool.com/quizzes/7e12784c/edit)
 
-10/15 on 6.11.23
+- 10/15 on 6.11.23
+- 2nd attempt 27.11.23 11/15 (73%)
+1.  D. Correct
+2.  C. Correct
+3.  B, D. Correct
+4.  A, B, C. Correct
+5.  B, D.
+- WRONG - also A, and C. In A: I read too fast and missed the final NOT NULL alteration. I'm not sure how I missed C.
+6.  C, D Correct
+7.  A, C, E. 
+- WRONG, missed F. Remove a column is also `alter table`.
+8.  D. Correct
+9.  A, D. Correct
+10.  A
+- Wrong: I missed the primary key constraint at the bottom of the table.
+11.  A, D Correct
+12.  A, B, D Correct
+13.  C Correct
+14.  B Correct
+15.  D
+- WRONG , also B. It is a LEft outer join because it will show all rows from `pet_owners` plus any matching rows from `pets`. This means the left table can have multiples and the right can have NULLs.
 
