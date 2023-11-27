@@ -410,5 +410,20 @@ ORDER BY count(f.title) DESC, d.name
 
 
 
-## [Summary]()
-## [Quiz Lesson 3]()
+## [Summary](https://launchschool.com/lessons/5ae760fa/assignments/b1cb2305)
+
+
+## [Quiz Lesson 3](https://launchschool.com/quizzes/936f6956)
+
+- First go: 8/9 (89%)
+- Second go: 8/9(89%) - but a different wrong answer.
+1. D
+2. C
+3. B, C, E, F.
+4. B, D
+5. C
+6. B
+7. A, B, D
+8. C
+- INCORRECT - it was A. Ascending names means A at the top, just as ascending numbers means 1 at the top and 20 at the bottom.
+9. B, C
