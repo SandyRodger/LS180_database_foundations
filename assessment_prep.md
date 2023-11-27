@@ -223,14 +223,15 @@ REFERENCES continents(id);
 
 # To do (25.11.23)
 
-- Write answers for 'study guide' questions above (with bullet-proof examples). (done)
-- 2nd go through course:
-  - fill-out notes
-  - redo quizes
-- Refine 'study guide' answers above.
-- Re-do LS exercises that I failed/peaked first time.
-- fancy extras:
-  - aggregate functions
-  - Stringagg
-- Take assessment on Thursday 30th November.
+|  | Once | Twice | Thrice |
+| :--- | :---: | :---: | :---: |
+| Write answers for 'study guide' questions above (with bullet-proof examples)| 26.11.23 |  
+| redo quizes | done |
+| Refine 'study guide' answers above | 
+| 2nd go through course |
+| fill-out notes |
+| Re-do LS exercises that I failed/peaked first time. | 
+| fancy extras (aggregate functions) |
+| fancy extras(Stringagg) |
+| Take assessment on Thursday 30th November| 
 
