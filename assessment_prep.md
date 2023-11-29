@@ -12,7 +12,7 @@
 - multiple joins: This is simply adding multiple JOINS together in the same query. This is how many to many relationships between tables are implemented, with a third table acting as a join table.
 
 2. Name and define the three sublanguages of SQL and be able to classify different statements by sublanguage.
-- DDL: Data Definition Language: For defining the structure of databases. Their tables and columns. For example `CREATE TABLE` and `ALTER TABLE ALTER COLUMN`  
+- DDL: Data Definition Language: For defining the structure of databases. Their tables and columns. For example all `CREATE` statements (even CREATE SEQUENCE) and `ALTER TABLE ALTER COLUMN`  
 - DML: Data Manipulation Language: For retrieving and modifying data. `SELECT` queries for example. 
 - DCL: Data Control Language: Used to determine what various users are allowed to do when interacting with a database. For example `GRANT SELECT ON employees TO john;`
 
@@ -221,19 +221,7 @@ REFERENCES continents(id);
 
 - tick
 
-# To do (25.11.23)
-
-|  | Once | Twice | Thrice |
-| :--- | :---: | :---: | :---: |
-| Write answers for 'study guide' questions above (with bullet-proof examples)| 26.11.23 |  
-| redo quizes | 27.11.23 |
-| write out quiz-errors |
-| Refine 'study guide' answers above | 
-| 2nd go through course + fill-out notes|
-| Re-do LS exercises that I failed/peaked first time.| 
-| fancy extras (aggregate functions) |
-| fancy extras(Stringagg) |
-| Take assessment on Thursday 30th November| 
+## Quiz corrections:
 
 Q1 
 
@@ -301,3 +289,18 @@ Q3
 
 7. A LEFT OUTER JOIN would return all the users in the `library_users` table regardless of whether they had taken out a book or not.
 8. Ascending names means A at the top, just as ascending numbers means 1 at the top and 20 at the bottom.
+
+## To do (25.11.23)
+
+|  | Once | Twice | Thrice |
+| :--- | :---: | :---: | :---: |
+| Write answers for 'study guide' questions above (with bullet-proof examples)| 26.11.23 |  
+| redo quizes | 27.11.23 |
+| write out quiz-errors | 27.11.23 | 
+| Re-do LS exercises that I failed/peaked first time.| 
+| Refine 'study guide' answers above | 
+| 2nd go through course + fill-out notes|
+| fancy extras (aggregate functions) |
+| fancy extras(Stringagg) |
+| Take assessment on/before Thursday 30th November| 
+
